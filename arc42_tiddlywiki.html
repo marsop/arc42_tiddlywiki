@@ -145,11 +145,13 @@ Error message and password prompt
 
 <li>Building Block View</li>
 
+<li>Business Context</li>
+
 <li>Concepts</li>
 
 <li>Constraints</li>
 
-<li>Context</li>
+<li>Context and Scope</li>
 
 <li>Conventions</li>
 
@@ -178,6 +180,8 @@ Error message and password prompt
 <li>Stakeholders</li>
 
 <li>Technical Constraints</li>
+
+<li>Technical Context</li>
 
 <li>Technical Risks</li>
 
@@ -7857,7 +7861,7 @@ Error message and password prompt
 <div created="20161124081740232" modified="20161124082733819" title="$:/state/tab/sidebar--1835078512">
 <pre>$:/core/ui/SideBar/Recent</pre>
 </div>
-<div list="Home Glossary [[Technical Risks]] [[Quality Scenarios]] [[Design Decisions]] Concepts [[Deployment View]] [[Runtime View]]" title="$:/StoryList">
+<div list="[[Context and Scope]] [[Technical Context]] [[Business Context]] Home" title="$:/StoryList">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
@@ -7874,8 +7878,8 @@ Error message and password prompt
     }
 }</pre>
 </div>
-<div created="20161124081910298" modified="20161124081911079" title="$:/temp/search">
-<pre>Getting</pre>
+<div created="20161124081910298" modified="20190729080135306" title="$:/temp/search">
+<pre>Context</pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.13">
 <pre>{
@@ -8006,6 +8010,26 @@ Level 3 zooms into the building blocks of Level 2, etc.
 &lt;&lt;&lt;
 </pre>
 </div>
+<div created="20190729080302085" modified="20190729080312062" title="Business Context">
+<pre>
+&lt;&lt;&lt;
+''Content''
+
+Specification of all communication partners (users, IT-systems, …) with explanations of domain specific inputs and outputs or interfaces. Optionally you can add domain specific formats or communication protocols.
+
+''Motivation''
+
+All stakeholders shoud understand which data are exchanged with the environment of the system.
+
+''Form''
+
+All kinds of diagrams that show the system as a black box and specify the domain interfaces to communiations partners.
+
+Alternatively (or additionally) you can use a table. The title of the table is the name of your system, the three columns contain the name of the communication partner, the inputs, and the outputs.
+
+&lt;&lt;&lt;
+</pre>
+</div>
 <div created="20161124100649513" modified="20161124100818393" title="Concepts">
 <pre># Domain Models
 # Recurring or Generic Structures and Patterns
@@ -8052,8 +8076,7 @@ Some concept cannot be “factored” into a separate building block of the arch
 </pre>
 </div>
 <div created="20161124095426303" modified="20161124095527089" title="Constraints">
-<pre>
-&lt;&lt;&lt;
+<pre>&lt;&lt;&lt;
 !!! Contents
 Any requirement that constrains software architects in their freedom of design decisions or the development process.
 !!! Motivation
@@ -8072,8 +8095,29 @@ The influence of constraints is described by [Hofmeister et al] (Software Archit
 # [[Conventions]]
 </pre>
 </div>
-<div created="20161124100314973" modified="20161124100339482" title="Context">
-<pre># [[Business Context]]
+<div created="20161124100314973" modified="20190729080249172" tags="context scope" title="Context and Scope">
+<pre>
+&lt;&lt;&lt;
+''Content''
+
+System scope and context - as the name suggests - delimits your system (i.e. your scope) from all its communication partners (neighboring systems and users, i.e. the context of your system). It thereby specifies the external interfaces.
+
+If necessary, differentiate the business context (domain specific inputs and outputs) from the technical context (channels, protocols, hardware).
+
+''Motivation''
+
+The domain interfaces and technical interfaces to communication partners are among your system’s most critical aspects. Make sure that you completely understand them.
+
+''Form''
+
+* Various context diagrams
+* Lists of communication partners and their interfaces.
+
+&lt;&lt;&lt;
+
+
+
+# [[Business Context]]
 # [[Technical Context]]
 # [[External Interfaces]]</pre>
 </div>
@@ -8114,8 +8158,7 @@ Diagrams by your hardware-oriented colleagues who describe processors and channe
 </pre>
 </div>
 <div created="20161124100837617" modified="20161124100908472" title="Design Decisions">
-<pre>
-&lt;&lt;&lt;
+<pre>&lt;&lt;&lt;
 !!! Contents
 
 Document all important design decisions and their reasons!
@@ -8156,8 +8199,7 @@ When did you decide?
 </pre>
 </div>
 <div created="20161124101045526" modified="20161124101114578" title="Glossary">
-<pre>
-&lt;&lt;&lt;
+<pre>&lt;&lt;&lt;
 !!! Contents
 
 The most important terms of the software architecture in alphabetic order.
@@ -8172,7 +8214,7 @@ A simple table with columns ''Term ''and ''Definition''
 &lt;&lt;&lt;
 </pre>
 </div>
-<div created="20161124082717479" modified="20161124083140397" title="Home">
+<div created="20161124082717479" modified="20190729080210577" title="Home">
 <pre>&lt;&lt;&lt;
 This is the home of the English version of the ARC42 Template
 
@@ -8182,7 +8224,7 @@ This is the home of the English version of the ARC42 Template
 
 # [[Introduction and Goals]] 
 # [[Constraints]]
-# [[Context]]
+# [[Context and Scope]]
 # [[Solution Strategy]]
 # [[Building Block View]]
 # [[Runtime View]]
@@ -8377,9 +8419,27 @@ see examples at [[arc42 | http://confluence.arc42.org/display/templateEN/2.1+Tec
 # Operating System Constraints
 # Programming Constraints</pre>
 </div>
-<div created="20161124101011677" modified="20161124101030055" title="Technical Risks">
+<div created="20190729080334248" modified="20190729080348571" title="Technical Context">
 <pre>
 &lt;&lt;&lt;
+
+''Contents''
+
+Technical interfaces (channels and transmission media) linking your system to its environment. In addition a mapping of domain specific input/output to the channels, i.e. an explanation with I/O uses which channel.
+
+''Motivation''
+
+Many stakeholders make architectural decision based on the technical interfaces between the system and its context. Especially infrastructure or hardware designers decide these technical interfaces.
+
+''Form''
+
+E.g. UML deployment diagram describing channels to neighboring systems, together with a mapping table showing the relationships between channels and input/output.
+
+&lt;&lt;&lt;
+</pre>
+</div>
+<div created="20161124101011677" modified="20161124101030055" title="Technical Risks">
+<pre>&lt;&lt;&lt;
 !!! Contents
 
 A list of identified technical risks, ordered by priority
